@@ -1,0 +1,13 @@
+[Unit]
+Description=RProxy Server Service
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Restart=on-failure
+RestartSec=5s
+ExecStart=/usr/bin/rproxys -c /etc/rproxy/rproxys.ini
+
+[Install]
+WantedBy=multi-user.target
